@@ -105,6 +105,5 @@ int main(int argc, char const *argv[])
       }
     }
   }
-  //printf("Xau\n");
-  exit(0);
+  exit(0);//end of the process
 }
