@@ -19,7 +19,7 @@
 # Discussão 
 
 * O programa funciona da seguinte forma:
-	Inicialmente cria-se um processo secundário através do uso da função fork(), esse processo é hierarquicamente o processo filho, porém o mesmo só será criado dependendo do retorno da função fork(). Caso o retorno seja menor do que zero ocorreu um erro ao gerar o processo filho, o programa então notifica o erro e encerra a execução com o valor -1. O retorno também pode ser maior igual a zero, caso seja igual indica que o processo em execução é o processo original, o processo pai, e caso seja maior que zero o processo em questão é o filho gerado. 
+	Inicialmente cria-se um processo secundário através do uso da função fork(), esse processo é hierarquicamente o processo filho, porém o mesmo só será criado dependendo do retorno da função fork(). Caso o retorno seja menor do que zero ocorreu um erro ao gerar o processo filho, o programa então notifica o erro e encerra a execução com o valor -1. O retorno também pode ser maior ou igual a zero, caso seja igual indica que o processo em execução é o processo original, o processo pai, e caso seja maior que zero o processo em questão é o filho gerado. 
 	Depois disso, o processo filho tem seu id convertido e salvo em uma string, para ser possivel a cocatenação com os comandos que serão usados no terminal de dentro do execultável.
 	Esses dois argumentos são o "cpu" e o "cpu_mem", e é a partir deles que os resultados serão expostos. 
 
@@ -46,4 +46,4 @@
 
 	![grafico1](memoria.png)
 	
-	* Assim como o gráfico prévio, esse também é referente ao uso da memória, contudo agora os dados estão apresentados em porcentagem de uso em função do tempo. Ao comparar o gráfico com o seu prescedente é possível visualizar melhor o que foi explicado anteriormente com relação ao rápido crescimento na alocação de memória, já que o dado percentual é uma abstração mais intuitiva. Sendo assim, nota-se que em 10 segundos a memória uso subiu de 0% para 8,9%, sendo assim é possível inferir que seria inviável continuar a execução desse programa por mais de um minuto, já que a memória seria totalmente ocupada e tornaria impossível o uso do computador.
+	* Assim como o gráfico prévio, esse também é referente ao uso da memória, contudo agora os dados estão apresentados em porcentagem de uso em função do tempo. Ao comparar o gráfico com o seu prescedente é possível visualizar melhor o que foi explicado anteriormente com relação ao rápido crescimento na alocação de memória, já que o dado percentual é uma abstração mais intuitiva. Sendo assim, nota-se que em 10 segundos a memória uso subiu de 0% para 8,9%, sendo assim é possível inferir que seria inviável continuar a execução desse programa por mais dois minutos, já que em apenas dez segundos pouco menos de 10% da memoria já havia sido ocupada.
